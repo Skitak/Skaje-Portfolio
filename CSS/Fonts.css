@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'BioRhyme';
+  font-style: normal;
+  font-weight: 400;
+  src: local('BioRhyme'), local('BioRhyme-Regular'), url(CSS/Fonts/BioRhyme/BioRhyme-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(CSS/Fonts/Lato/Lato-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'Macondo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Macondo'), local('Macondo-Regular'), url(CSS/Fonts/Macondo/Macondo-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(CSS/Fonts/Montserrat/Montserrat-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(CSS/Fonts/Open_Sans/OpenSans-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(CSS/Fonts/PT_Sans/PT_Sans-Web-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Press Start 2P Regular'), local('PressStart2P-Regular'), url(CSS/Fonts/Press_Start_2P/PressStart2P-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(CSS/Fonts/Roboto/Roboto-Regular.ttf) format('ttf');
+}
