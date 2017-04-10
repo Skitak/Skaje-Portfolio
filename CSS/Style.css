@@ -2,9 +2,7 @@ html, body {
   padding: 0px;
   margin: 0px;
   width: 100%;
-  height: 100%;
-  /*overflow: hidden;*/
-  font-family: 'Lato';
+  /*! overflow: hidden; */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -40,48 +38,59 @@ p {
 \*****************************************/
 
 .l-header {
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  white-space: nowrap;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 250px;
-  padding: 0px;
-  margin: 0px;
+  height: 120px;
+  background-color: #FFF;
 }
 
 .l-header-title{
-  padding-left: 40px;
-  border: 1px black solid;
+  position: relative;
+  padding-left: 10%;
+  align-self: center;
 }
 
 .l-header-title h1{
-  font-size: 60px;
+  font-family: Fairview;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  font-size: 4em;
 }
 
 .l-header-title h2{
-  font-size: 40px;
-  padding-left: 20px;
+  font-family: DejaVu;
+  position: relative;
+  color: #333;
+  top:-5px;
+  font-size: 1.25em;
+  padding-left: 60px;
 }
 
 .l-header nav{
+  font-family: DejaVu;
+  position: relative;
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-  font-size: 30px;
-  margin-right: 5%;
+
+  padding-top: 25px;
   width: 100%;
-  border: 1px black solid;
 }
 
 .l-header nav a{
   position: relative;
-  margin-right: 20px;
-  padding-bottom: 10px;
+  font-size: 1.7em;
+  z-index: 2;
+  margin-right: 30px;
 }
 
 .l-header nav a:last-child{
-  margin-right: 50px;
+  margin-right: 10%;
 }
 
 .l-header nav a::after{
@@ -90,17 +99,19 @@ p {
   background-color: #333;
   width: 100%;
   height: 2px;
-  bottom: 0px;
+  bottom: -3px;
   left: 0px;
-  transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
-  transform: scaleX(0);
+  transition: all 0.2s ease-in-out;
   -webkit-transform: scaleX(0);
+  transform: scaleX(0);
 }
 
+
+
 .l-header nav a:hover::after{
+-webkit-transform: scaleX(1) ;
   transform: scaleX(1);
-  -webkit-transform: scaleX(1);
 }
 
 .l-header nav img{
@@ -109,10 +120,54 @@ p {
 
 
 .l-body {
-  width: 100%;
+  min-width: 1000px;
+  max-width: 100%;
+  height: 800px;
+  position: relative;
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.l-body article {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.l-body article img{
+
+  height: 100%;
+}
+
+.l-body article h2{
+  position: absolute;
+  top: 10px;
+  color: white;
+}
+
+.l-body .Left-arrow{
+  z-index: 2;
+  position: absolute;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(0, 0, 0,0.5);
+}
+.l-body .Right-arrow{
+  z-index: 2;
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(0, 0, 0,0.5);
 }
 /*****************************************\
 
@@ -129,7 +184,7 @@ p {
   visibility: hidden;
 }
 
-.visible {
+.active {
   visibility: visible;
 }
 /*****************************************\
@@ -137,4 +192,3 @@ p {
       Animations #85672b
 
 \*****************************************/
-
