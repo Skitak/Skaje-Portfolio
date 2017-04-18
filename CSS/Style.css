@@ -125,6 +125,7 @@ p {
   height: 800px;
   position: relative;
   display: flex;
+  overflow:hidden;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
@@ -153,21 +154,34 @@ p {
   color: white;
 }
 
-.l-body .Left-arrow{
-  z-index: 2;
-  position: absolute;
-  left: 0px;
-  width: 300px;
-  height: 100%;
-  background-color: rgba(0, 0, 0,0.5);
+.l-body .Left{
+  left: -5%;
+  transition: all ease-in-out 0.3s;
 }
-.l-body .Right-arrow{
-  z-index: 2;
-  position: absolute;
+.l-body .Right{
+  right: -5%;
+  transition: all ease-in-out 0.3s;
+}
+
+.l-body .Left:hover{
+  left: 0px;
+}
+
+.l-body .Right:hover{
   right: 0px;
-  width: 300px;
+}
+
+.arrow {
+  position: absolute;
+  z-index: 2;
+  width: 25%;
   height: 100%;
-  background-color: rgba(0, 0, 0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.2;
+}
+
+.arrow:hover {
+  opacity: 1;
 }
 /*****************************************\
 
