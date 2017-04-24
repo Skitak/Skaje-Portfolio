@@ -399,11 +399,11 @@ p {
       State
 
 \*****************************************/
-.hidden {
+.hide {
   visibility: hidden;
 }
 
-.active {
+.show {
   visibility: visible;
 }
 /*****************************************\
