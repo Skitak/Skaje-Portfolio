@@ -2,6 +2,7 @@ html, body {
   padding: 0px;
   margin: 0px;
   width: 100%;
+  position: relative;
   /*! overflow: hidden; */
   box-sizing: border-box;
   display: flex;
@@ -146,15 +147,13 @@ p {
 
 
 .l-body-carousel {
-  max-width: 1400px;
-  min-width: 600px;
-  width : 100%;
   position: relative;
   display: flex;
   overflow:hidden;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
+  flex-wrap: nowrap;
 }
 
 .l-body-carousel a {
@@ -164,8 +163,6 @@ p {
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  height: 100%;
-  width: 100%;
   z-index: 0;
 }
 
@@ -182,8 +179,10 @@ p {
 }
 
 .l-body-carousel article img{
-  max-width: 150%;
-  max-height: 800px;
+  max-width: 1400px;
+  min-width: 150%;
+  max-height: 80%;
+  min-height: 60%;
   height: auto;
 }
 
@@ -401,11 +400,23 @@ p {
       State
 
 \*****************************************/
-.hide {
+.hidden {
+  display: none;
+}
+
+.hidden-right {
+  display: block;
+}
+
+.hidden-left {
   visibility: hidden;
 }
 
-.show {
+.show-right {
+  visibility: visible;
+}
+
+.show-left {
   visibility: visible;
 }
 /*****************************************\
