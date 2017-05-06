@@ -2,8 +2,8 @@
   include "header.html";
 
   $bdd_Address = "localhost";
-  $bdd_user = "root";
-  $bdd_password = "";
+  $bdd_user = "skitak";
+  $bdd_password = "uic75015";
   $bdd_name = "arthur";
 
   $connection = new mysqli($bdd_Address, $bdd_user, $bdd_password, $bdd_name);
