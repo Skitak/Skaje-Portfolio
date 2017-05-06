@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="CSS\Fonts.css">
-  <link rel="stylesheet" href="CSS\Style.css">
-  <title>Arthur portfolio</title>
-</head>
-
-<body>
-  <header class="l-header">
-    <div class="l-header-title">
-      <h1><a href="#">Arthur Sorignet--Gautrot</a></h1>
-      <h2>Portfolio Game Designer</h2>
-    </div>
-    <nav>
-      <a href="#">Accueil</a>
-      <a href="#">A propos</a>
-      <a href="#">Me contacter</a>
-      <a href="#">CV</a>
-    </nav>
-  </header>
-
+<?php
+  include "header.html";
+ ?>
   <form class="contact" action="Contact.html" method="post">
     <fieldset>
       <label for="nom">Nom complet*</label>
