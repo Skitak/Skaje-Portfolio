@@ -1,10 +1,10 @@
 <?php
   include "header.html";
-  require 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+  require_once 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
   $nom = "";
   $email = "";
   $tel = "";
-  $message = "";
+  $message = "hi";
 
   if (!empty($_POST)){
     $nom = !empty($_POST["nom"])? $_POST["nom"] : "";
@@ -23,17 +23,33 @@
       $err = true;
     } if  (!$err){
       $message = wordwrap ($message, 70, "\r\n");
-      $mail = new PHPMailer;
-      $mail->setFrom($email);
-      $mail->addAddress("bas2205@live.fr");
+      $mail = new PHPMailer();
+      $mail->isSMTP();
+      $mail->Host = "smtp.1and1.com";
+      $mail->Port = 25;
+      $mail->SMTPAuth = true;
+      $mail->SMTPSecure = 'tls';
+      
+      $mail->Username = "bouquinbastien@gmail.com";
+      $mail->Password = "7409facd190";
+      
+      $mail->SetFrom($email,"Expéditeur");
+      $mail->AddAddress("bas2205@live.fr", $nom);
       $mail->Subject = "Portfolio message from : $nom";
       $mail->Body = $message;
-      if ($mail->send())
+      $mail->IsMail();
+      if ($mail->Send())
         echo "done";
-        else echo "error : " . $mail->ErrorInfo;
+        else 
+          echo $mail->ErrorInfo;
     }
 
   }
+$header = 'From: nico.1701@live.fr';
+if (mail("bas2205@live.fr","subject",$message, $header))
+  echo "done";
+else
+  echo "error";
  ?>
   <form class="contact" action="Contact.php" method="post">
     <fieldset>

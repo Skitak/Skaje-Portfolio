@@ -1,26 +1,32 @@
 <?php
+  if (!session_id ())
+    session_start();
   include "header.html";
-  $bdd_Address = "localhost";
-  $bdd_user = "skitak";
-  $bdd_password = "uic75015";
-  $bdd_name = "Arthur";
+  
+  $_SESSION["bdd"] = array();
+  $_SESSION["hi"] = "hi";
+  $_SESSION["bdd"]["Address"] = "sql11.freesqldatabase.com";
+  $_SESSION["bdd"]["user"] = "sql11173301";
+  $_SESSION["bdd"]["password"] = "AbDUiMCajz";
+  $_SESSION["bdd"]["name"] = "sql11173301";
 
-  $connection = new mysqli($bdd_Address, $bdd_user, $bdd_password, $bdd_name);
+  $connection = new mysqli($_SESSION["bdd"]["Address"],
+                           $_SESSION["bdd"]["user"],
+                           $_SESSION["bdd"]["password"],
+                           $_SESSION["bdd"]["name"]);
 
-  $query = $connection->query("SELECT title,image,link FROM GAME");
+  $query = $connection->query("SELECT id, image, title FROM GAME");
 
  ?>
   <content class="l-body-carousel">
     <div class="pannel Left"><span class="arrow"></span></div>
     <div class="pannel Right"><span class="arrow"></span></div>
     <?php
-
       while ($row = $query->fetch_assoc()){?>
-
-        <a href="#" class="hidden">
+        <a href=<?php echo '"Jeu.php?id=' . $row['id'] . '"';?> class="hidden">
           <article >
             <img src=<?php echo '"Images/' . $row['image'] . '"';?> alt="Bjr">
-            <h2>Nom de jeu</h2>
+            <h2><?php echo $row['title'];?></h2>
           </article>
         </a>
 

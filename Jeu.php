@@ -1,18 +1,38 @@
 <?php
+  if (!session_id ())
+    session_start();
   include "header.html";
- ?>
+  if (empty($_GET["id"])){
+    echo "error";
+    require "errorRequest.html";
+  } else if (!isset($_SESSION["bdd"])){
+    echo $_SESSION["hi"];
+    echo "no session variable yets";
+  }
+  else {
+    $connection = new mysqli($_SESSION["bdd"]["Address"],
+                           $_SESSION["bdd"]["user"],
+                           $_SESSION["bdd"]["password"],
+                           $_SESSION["bdd"]["name"]);
+    $query = $connection->query('SELECT * FROM GAME where id="' . $_GET['id'] .'"');
+    if ($row = $query->fetch_assoc()){
+?>
+
   <article class="l-body-game">
-    <h2>Nom de jeu</h2>
+    <h2><?php echo $row["title"]?></h2>
     <div class="image-link-container">
-      <a href="#" class="image-link"></a>
-      <img src="test.png" alt="Bjr">
+      <a href=<?php echo '"' . $row["link"] . '"'?> class="image-link"></a>
+      <img src=<?php echo '"Images/' . $row["image"] . '"'?> alt="Bjr">
     </div>
     <p>
-          Qu'est-ce que le Lorem Ipsum?
-    Je ne sais pas, mais ce qui est sûr, c'est que ce site tuera.
-
-       Oui.</p>
+          <?php echo '"' . $row["text"] . '"'?></p>
   </article>
 </body>
 
 </html>
+<?php
+  } else {
+        echo 'Le jeu numero ' . $_GET['id'] . ' n\'existe pas.';
+    }
+  }
+ ?>
