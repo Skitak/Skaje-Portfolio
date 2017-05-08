@@ -1,0 +1,10 @@
+u89225535
+#7409FAcd190
+
+serveur : home680833944.1and1-data.host
+
+Host: sql11.freesqldatabase.com
+Database name: sql11173301
+Database user: sql11173301
+Database password: AbDUiMCajz
+Port number: 3306
