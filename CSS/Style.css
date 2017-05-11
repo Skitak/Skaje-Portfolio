@@ -55,10 +55,8 @@ p {
 }
 
 .l-header-title{
-  position: relative;
-  height: 80%;
+  position: relativ
 }
-
 .l-header-title h1{
   font-family: Fairview;
   font-weight: lighter;
@@ -124,27 +122,9 @@ p {
   transform: scaleX(1);
 }
 
-@media screen and (max-width: 850px) {
-    .l-header{
-      flex-direction: column;
-      align-items: center;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-
-    .l-header .l-header-title{
-      flex: 1;
-    }
-
-    .l-body-carousel {
-      max-height: 700px;
-    }
-}
-
 .l-header nav img{
     display: none;
   }
-
 
 .l-body-carousel {
   max-width: 1400px;
@@ -446,4 +426,68 @@ p {
   to {
     left: 0%;
   }
+}
+
+/*****************************************\
+
+      Media
+
+\*****************************************/
+
+@media screen and (max-width: 850px) {
+    .l-header{
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .l-header .l-header-title{
+      flex: 1;
+    }
+
+    .l-body-carousel {
+      max-height: 700px;
+    }
+
+    .pannel {
+      border-radius: 0px 40px 40px 0px;
+      z-index: 3;
+      width: 20%;
+      height: 20%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 1;
+    }
+
+    /*.pannel .Right{
+      border-radius: 40px 0px 0px 40px;
+    }*/
+
+    .l-body-carousel .Left{
+      left: 0%;
+    }
+    .l-body-carousel .Right{
+      right: 0%;
+    }
+
+    .arrow {
+      background-image: url("../Assets/Arrow.png");
+    }
+
+    .Right .arrow{
+      transform: rotateY(180deg) translateX(0px);
+    }
+
+    .Right:hover .arrow{
+      transform: rotateY(180deg) translateX(0px);
+    }
+
+    .Left .arrow{
+      transform: translateX(0px);
+    }
+
+    .Left:hover .arrow{
+      transform: translateX(0px);
+    }
+
 }
