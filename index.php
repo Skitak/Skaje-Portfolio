@@ -4,7 +4,6 @@
   include "header.html";
 
   $_SESSION["bdd"] = array();
-  $_SESSION["hi"] = "hi";
   $_SESSION["bdd"]["Address"] = "sql11.freesqldatabase.com";
   $_SESSION["bdd"]["user"] = "sql11173301";
   $_SESSION["bdd"]["password"] = "AbDUiMCajz";
