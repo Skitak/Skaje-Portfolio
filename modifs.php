@@ -1,3 +1,5 @@
 <?php
-echo hash("sha256", "sorignet");
+  header('Location:http://arthursorignet.com/index.php', true);
+  exit();
+  echo "hi";
 ?>

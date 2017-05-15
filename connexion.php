@@ -1,12 +1,10 @@
 <?php
-
-  include "header.html";
-
   if (!session_id ())
     session_start();
 
   if ($_SESSION["connected"] === true){
-  echo '<meta http-equiv="refresh" content="1;url=http://192.168.0.100/menu.php"/>';
+  header("Location:http://192.168.0.100/menu.php");
+  exit();
   }
 
   if (!empty($_POST)){
@@ -14,25 +12,23 @@
       echo "remplie tous les champs stp gros";
     }
     else {
-      $connection = new mysqli("sql11.freesqldatabase.com",
-                                  "sql11173301",
-                                  "AbDUiMCajz",
-                                  "sql11173301");
+      $connection = new mysqli("sql11.freesqldatabase.com", "sql11173301", "AbDUiMCajz", "sql11173301");
       $query = $connection->query("SELECT mail, mdp from ACCOUNT")->fetch_assoc();
-        if ($_POST["mail"] !== $query["mail"] || hash('sha256', $_POST["mdp"]) !== $query["mdp"]){
-          echo "Nope, t'as fait une faute gros.";
-        } else {
-          $_SESSION["connected"] === true;
-          echo '<meta http-equiv="refresh" content="1;url=http://192.168.0.100/menu.php"/>';
+      if ($_POST["mail"] !== $query["mail"] || hash('sha256', $_POST["mdp"]) !== $query["mdp"]){
+        echo "Nope, t'as fait une faute gros.";
+      } else {
+        $_SESSION["connected"] === true;
+          header("Location:http://192.168.0.100/menu.php");
+          exit();
         }
-    }
   }
+}
+  include "header.html";
 ?>
-
 <form class="connexion" action="connexion.php" method="post">
   <fieldset>
     <label for="mail">Mail</label>
-    <input type="email" name="mail">
+    <input type="text" name="mail">
   </fieldset>
   <fieldset>
     <label for="mdp">Mot de passe</label>
