@@ -376,6 +376,61 @@ p {
   filter:  drop-shadow(10px,10px,8px, black);
   -webkit-filter:  drop-shadow(5px 5px 8px grey);
 }
+
+.php-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.php-menu-game {
+  width: 425px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items : center;
+  border-radius: 20px;
+}
+
+.php-menu-game-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.php-menu-game-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width : 20%;
+  height: 90%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.php-menu-game-icons .modif {
+  width : 100%;
+  height: 30%;
+  background-color: blue;
+  padding: 0px;
+  margin: 0px;
+}
+
+.php-menu-game-icons .delete {
+  width : 100%;
+  height: 30%;
+  background-color: red;
+  padding: 0px;
+  margin: 0px;
+}
+
+
 /*****************************************\
 
       Module

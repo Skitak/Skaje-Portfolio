@@ -2,7 +2,7 @@
   if (!session_id ())
     session_start();
 
-  if ($_SESSION["connected"] === true){
+  if ($_SESSION["connected"]){
   header("Location:http://192.168.0.100/menu.php");
   exit();
   }
@@ -17,10 +17,10 @@
       if ($_POST["mail"] !== $query["mail"] || hash('sha256', $_POST["mdp"]) !== $query["mdp"]){
         echo "Nope, t'as fait une faute gros.";
       } else {
-        $_SESSION["connected"] === true;
+        $_SESSION["connected"] = true;
           header("Location:http://192.168.0.100/menu.php");
           exit();
-        }
+      }
   }
 }
   include "header.html";
