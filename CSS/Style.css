@@ -417,7 +417,7 @@ p {
 .php-menu-game-icons .modif {
   width : 100%;
   height: 30%;
-  background-color: blue;
+  background-image: url("../Assets/modifs.png");
   padding: 0px;
   margin: 0px;
 }
@@ -425,12 +425,28 @@ p {
 .php-menu-game-icons .delete {
   width : 100%;
   height: 30%;
-  background-color: red;
+  background-image: url("../Assets/cross.png");
   padding: 0px;
   margin: 0px;
 }
 
 
+.php-menu-game-add {
+  width : 200px;
+  height: 100px;
+  background-color: rgb(0, 140, 255);
+  color: white;
+  font-family: "roboto";
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.php-menu-game-add:hover {
+  background-color: rgb(0, 94, 219);
+}
 /*****************************************\
 
       Module

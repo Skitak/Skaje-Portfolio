@@ -13,6 +13,9 @@ if (!isset($_SESSION["connected"]) || !$_SESSION["connected"])
 ?>
 
 <article class="php-menu">
+  <div class="php-menu-game-add">
+    ADD
+  </div>
 <?php
   while ($row = $query->fetch_assoc()) { ?>
     <div class="php-menu-game">
