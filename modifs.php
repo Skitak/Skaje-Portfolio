@@ -3,12 +3,19 @@ if (!session_id ())
   session_start();
 
 if (!isset($_SESSION["connected"]) || !$_SESSION["connected"]){
-  header("Location:http://192.168.0.100/connexion.php");
+  header("Location:http://arthursorignet.com/connexion.php");
   exit();
 }
 $connection = new mysqli("sql11.freesqldatabase.com", "sql11173301", "AbDUiMCajz", "sql11173301");
 if (!empty($_POST)){
-  if (isset($_FILES["fileToUpload"]["name"])){
+  if(!file_exists($_FILES['fileToUpload']['tmp_name']) || !is_uploaded_file($_FILES['fileToUpload']['tmp_name'])){
+    $query = $connection->query("UPDATE GAME SET id='" . $_POST["id"] . "',title='"
+                            . $_POST["title"] . "', link='" . $_POST["link"] . "',text='" .
+                              $_POST["text"] . "' WHERE id='" . $_GET["id"] . "'");
+    header("Location:http://arthursorignet.com/menu.php");
+    exit();
+  } else {
+  $query = $connection->query("SELECT image FROM GAME where id='" . $_GET["id"] . "'")->fetch_assoc();
   $target_dir = "Images/";
   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
   $uploadOk = 1;
@@ -32,23 +39,19 @@ if (!empty($_POST)){
     echo "il y a eu un problème du coup gros";
   } else {
       if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-          $query = $connection->query("UPDATE GAME SET id='" . $_POST["id"] . "',title='" . $_POST["title"] . "',image='" .
-                                       $_FILES["fileToUpload"]["name"] . "',link='" . $_POST["link"] . "',text='" .
+        unlink($target_dir . $query["image"]);
+        $query = $connection->query("UPDATE GAME SET id='" . $_POST["id"] . "',title='" . $_POST["title"] . "',image='" .
+                                       $_FILES["fileToUpload"]["name"] .
+                                      "',link='" . $_POST["link"] . "',text='" .
                                       $_POST["text"] . "' WHERE id='" . $_GET["id"] . "'");
-          header("Location:http://192.168.0.100/menu.php");
-          exit();
+        header("Location:http://arthursorignet.com/menu.php");
+        exit();
       } else {
         echo "Ha merde, il y a eu un problème ... Envoie un sms et j'essaie de règler ça (j'ai dû reçevoir un mail normalement)";
         mail("bas2205@live.fr","pb site Arthur", "Faut que tu check le site de Arthur, il a pas pu upload.");
       }
   }
 
-} else{
-  $query = $connection->query("UPDATE GAME SET id='" . $_POST["id"] . "',title='"
-                          . $_POST["title"] . "', link='" . $_POST["link"] . "',text='" .
-                            $_POST["text"] . "' WHERE id='" . $_GET["id"] . "'");
-  header("Location:http://192.168.0.100/menu.php");
-  exit();
 }
 }
 else {

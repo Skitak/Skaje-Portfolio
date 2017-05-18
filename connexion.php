@@ -3,7 +3,7 @@
     session_start();
 
   if ($_SESSION["connected"]){
-  header("Location:http://192.168.0.100/menu.php");
+  header("Location:http://arthursorignet.com/menu.php");
   exit();
   }
 
@@ -18,7 +18,7 @@
         echo "Nope, t'as fait une faute gros.";
       } else {
         $_SESSION["connected"] = true;
-          header("Location:http://192.168.0.100/menu.php");
+          header("Location:http://arthursorignet.com/menu.php");
           exit();
       }
   }

@@ -24,8 +24,7 @@
       <a href=<?php echo '"' . $row["link"] . '"'?> class="image-link"></a>
       <img src=<?php echo '"Images/' . $row["image"] . '"'?> alt="Bjr">
     </div>
-    <p>
-          <?php echo '"' . $row["text"] . '"'?></p>
+    <p><?php echo $row["text"]?></p>
   </article>
 </body>
 
