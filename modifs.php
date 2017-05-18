@@ -3,7 +3,7 @@ if (!session_id ())
   session_start();
 
 if (!isset($_SESSION["connected"]) || !$_SESSION["connected"]){
-  header("Location:http://arthursorignet.com/connexion.php");
+  header("Location:http://arthursorignet.com");
   exit();
 }
 $connection = new mysqli("sql11.freesqldatabase.com", "sql11173301", "AbDUiMCajz", "sql11173301");

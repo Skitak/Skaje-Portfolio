@@ -430,21 +430,47 @@ p {
   margin: 0px;
 }
 
-.php-menu-game-add {
+.php-menu-controls {
   width : 200px;
-  height: 100px;
-  background-color: rgb(0, 140, 255);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   color: white;
   font-family: "roboto";
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
   transition: all 0.2s ease-in-out;
+}
+
+.php-menu-game-add {
+  background-color: rgb(70, 161, 255);
+  width: 100%;
   text-align: center;
-  vertical-align: middle;
 }
 
 .php-menu-game-add:hover {
   background-color: rgb(0, 94, 219);
+}
+
+.php-menu-game-account {
+  background-color: rgb(32, 182, 97);
+  width: 100%;
+  text-align: center;
+}
+
+.php-menu-game-account:hover {
+  background-color: rgb(0, 136, 22);
+}
+
+.php-menu-game-deconnection {
+  background-color: rgb(221, 68, 68);
+  width: 100%;
+  text-align: center;
+}
+
+.php-menu-game-deconnection:hover {
+  background-color: rgb(171, 21, 21);
 }
 /*****************************************\
 

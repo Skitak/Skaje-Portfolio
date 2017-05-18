@@ -4,7 +4,7 @@ if (!session_id ())
   session_start();
 
 if (!isset($_SESSION["connected"]) || !$_SESSION["connected"]){
-  header("Location:http://arthursorignet.com/connexion.php");
+  header("Location:http://arthursorignet.com");
   exit();
 }
 
@@ -15,9 +15,17 @@ if (!isset($_SESSION["connected"]) || !$_SESSION["connected"]){
 ?>
 
 <article class="php-menu">
+  <div class="php-menu-controls">
   <a href="add.php" class="php-menu-game-add">
-    ADD
+    AJOUTER
   </a>
+  <a href="compte.php" class="php-menu-game-account">
+    COMPTE
+  </a>
+  <a href="deconnexion.php" class="php-menu-game-deconnection">
+    DECONNEXION
+  </a>
+</div>
 <?php
   while ($row = $query->fetch_assoc()) { ?>
     <div class="php-menu-game">

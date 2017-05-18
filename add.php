@@ -4,7 +4,7 @@ if (!session_id ())
   session_start();
 
 if (!isset($_SESSION["connected"]) || !$_SESSION["connected"]){
-  header("Location:http://arthursorignet.com/connexion.php");
+  header("Location:http://arthursorignet.com");
   exit();
 }
 
